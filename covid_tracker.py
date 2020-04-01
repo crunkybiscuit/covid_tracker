@@ -155,3 +155,5 @@ class State_Data_Generator(object):
         plt.show()
         
 us = State_Data_Generator(state_pop,covid_data,pop_adj=True)
+us.data_calc()
+us.generate_dot_plot(us.state_test_rate,us.state_positive_rate,'testing','positive rate')
