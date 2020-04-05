@@ -31,7 +31,7 @@ def date_convert(date_int):
     return date(year,month,day)
 
 def prep_covid_data(raw_csv):
-    int_date_range = range(raw_csv['date'].min(),raw_csv['date'].max()+1)
+    int_date_range = raw_csv['date'].unique().tolist()
     datetime_dict = {date:date_convert(date) for date in int_date_range}
     return raw_csv.replace({'date':datetime_dict})
 
